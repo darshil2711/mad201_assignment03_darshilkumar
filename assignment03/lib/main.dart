@@ -3,7 +3,7 @@
 /// Main Application File
 // lib/main.dart
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart'; // Import the new screen
+import 'screens/main_screen.dart'; // Import the new MainScreen
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: Colors.grey[100],
       ),
-      home: const HomeScreen(), // Set HomeScreen as the home
+      home: const MainScreen(), // Set MainScreen as the home
     );
   }
 }
