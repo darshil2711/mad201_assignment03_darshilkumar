@@ -8,7 +8,7 @@ class Movie {
   final String genre;
   final int year;
   final String description;
-  final String posterUrl; // Path to the asset image
+  final String imagePath;
   bool isFavorite;
 
   Movie({
@@ -17,7 +17,7 @@ class Movie {
     required this.genre,
     required this.year,
     required this.description,
-    required this.posterUrl,
+    required this.imagePath,
     this.isFavorite = false,
   });
 }
