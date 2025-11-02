@@ -22,7 +22,7 @@ class MovieListTile extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: ListTile(
         leading: Image.asset(
-          movie.posterUrl,
+          movie.imagePath,
           fit: BoxFit.cover,
           width: 50,
           errorBuilder: (context, error, stackTrace) {
