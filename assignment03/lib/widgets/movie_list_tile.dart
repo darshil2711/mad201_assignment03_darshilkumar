@@ -4,6 +4,7 @@
 // lib/widgets/movie_list_tile.dart
 import 'package:flutter/material.dart';
 import '../models/movie_model.dart';
+import '../screens/movie_detail_screen.dart'; // Import the detail screen
 
 class MovieListTile extends StatelessWidget {
   final Movie movie;
@@ -20,7 +21,7 @@ class MovieListTile extends StatelessWidget {
           fit: BoxFit.cover,
           width: 50,
           errorBuilder: (context, error, stackTrace) {
-            return const Icon(Icons.movie, size: 50); // Placeholder icon
+            return const Icon(Icons.movie, size: 50);
           },
         ),
         title: Text(
@@ -34,11 +35,17 @@ class MovieListTile extends StatelessWidget {
             color: Colors.amber,
           ),
           onPressed: () {
-            // Functionality to be added later
+            // Functionality in Commit 6
           },
         ),
+        // ADDED THIS:
         onTap: () {
-          // Navigation to be added later
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MovieDetailScreen(movie: movie),
+            ),
+          );
         },
       ),
     );
