@@ -21,7 +21,7 @@ class MovieDetailScreen extends StatelessWidget {
           children: [
             Center(
               child: Image.asset(
-                movie.posterUrl,
+                movie.imagePath,
                 height: 300,
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) {
