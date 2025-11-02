@@ -1,10 +1,21 @@
 /// MAD201-01 Assignment 3
 /// Darshilkumar Karkar - A00203357
 /// Movie Data
+
 // lib/data/movie_data.dart
+
+// This is our "fake database" file.
+// Instead of fetching data from the internet, we're just keeping a list
+// of movies right here in the app to use for testing.
+
+// We need to import the 'Movie' model so this file knows
+// what a "Movie" object looks like.
 import '../models/movie_model.dart';
 
+// 'final' just means this list can't be replaced with a *different* list later.
+// It's our one and only source of movie data for now.
 final List<Movie> mockMovies = [
+  // Let's start with some modern classics...
   Movie(
     id: 'm1',
     title: 'Inception',
@@ -42,6 +53,8 @@ final List<Movie> mockMovies = [
         'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.',
     imagePath: 'assets/images/matrix.jpg',
   ),
+
+  // And now for some 90s gold!
   Movie(
     id: 'm5',
     title: 'Pulp Fiction',
@@ -70,6 +83,8 @@ final List<Movie> mockMovies = [
         'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
     imagePath: 'assets/images/shawshank_redemption.jpg',
   ),
+
+  // Gotta have the all-time greats
   Movie(
     id: 'm8',
     title: 'The Godfather',
@@ -85,9 +100,11 @@ final List<Movie> mockMovies = [
     genre: 'Drama',
     year: 1999,
     description:
-        'An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into something much, much more.',
+        'An insomnIac office worker and a devil-may-care soap maker form an underground fight club that evolves into something much, much more.',
     imagePath: 'assets/images/fight_club.jpg',
   ),
+
+  // And rounding it out with some more recent hits
   Movie(
     id: 'm10',
     title: 'Parasite',
