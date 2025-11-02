@@ -4,12 +4,17 @@
 // lib/widgets/movie_list_tile.dart
 import 'package:flutter/material.dart';
 import '../models/movie_model.dart';
-import '../screens/movie_detail_screen.dart'; // Import the detail screen
+import '../screens/movie_detail_screen.dart';
 
 class MovieListTile extends StatelessWidget {
   final Movie movie;
+  final Function(Movie) onToggleFavorite; // Accept the function
 
-  const MovieListTile({super.key, required this.movie});
+  const MovieListTile({
+    super.key,
+    required this.movie,
+    required this.onToggleFavorite, // Add to constructor
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,14 +36,13 @@ class MovieListTile extends StatelessWidget {
         subtitle: Text('${movie.genre} (${movie.year})'),
         trailing: IconButton(
           icon: Icon(
-            movie.isFavorite ? Icons.star : Icons.star_border,
+            movie.isFavorite ? Icons.star : Icons.star_border, // Dynamic icon
             color: Colors.amber,
           ),
           onPressed: () {
-            // Functionality in Commit 6
+            onToggleFavorite(movie); // Call the function
           },
         ),
-        // ADDED THIS:
         onTap: () {
           Navigator.push(
             context,
