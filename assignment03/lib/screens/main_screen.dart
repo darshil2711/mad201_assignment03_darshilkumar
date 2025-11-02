@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'favorites_screen.dart';
 import 'profile_screen.dart';
+import '../widgets/app_drawer.dart'; // Import the drawer
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -16,6 +17,8 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
+
+  static const List<String> _titles = <String>['Home', 'Favorites', 'Profile'];
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
@@ -32,6 +35,10 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(_titles[_selectedIndex]), // Title changes with tab
+      ),
+      drawer: const AppDrawer(), // Add the drawer
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
