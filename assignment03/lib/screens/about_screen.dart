@@ -15,7 +15,7 @@ class AboutScreen extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Text(
-            'This is a Movie Explorer app built with Flutter.\n\nCreated by [Your Name].',
+            'This is a Movie Explorer app built with Flutter.\n\nCreated by Darshilkumar Karkar.',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 18),
           ),
